@@ -1,0 +1,28 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "show FS",
+            "type": "shell",
+            "command": "df -Tha | grep fuse",
+            "problemMatcher": []
+        },
+        {
+            "label": "unmount",
+            "type": "shell",
+            "command": "fusermount3 -u ~/mntTest/my-fs",
+            "problemMatcher": []
+        },
+        {
+            "label": "create Large File",
+            "type": "shell",
+            //"command": "dd if=/dev/zero of=largeFile.txt bs=8096 count=1",
+            "command": "yes \"Some text\" | head -n 100000 > large-file.txt",
+            "problemMatcher": []
+        }
+    ]
+}
+
+
